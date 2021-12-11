@@ -1,5 +1,5 @@
 import { Button } from "ui"
-import { hello } from "hello"
+import { hello } from "@next-fastify-turborepo/hello"
 import { useEffect } from "react";
 
 export default function Web() {
