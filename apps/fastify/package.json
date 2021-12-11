@@ -11,11 +11,9 @@
     "config": "*",
     "esbuild": "^0.14.2",
     "esbuild-node-tsc": "^1.8.2",
-    "eslint": "7.32.0",
     "nodemon": "^2.0.15",
     "tsc-alias": "^1.4.2",
-    "tsconfig": "*",
-    "typescript": "4.5.2"
+    "tsconfig": "*"
   },
   "dependencies": {
     "fastify": "^3.24.1"

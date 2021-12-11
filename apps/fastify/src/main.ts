@@ -1,5 +1,5 @@
-import Fastify from "fastify";
 import type { FastifyPluginAsync } from "fastify";
+import Fastify from "fastify";
 
 const fastify = Fastify({
   connectionTimeout: 3000,
