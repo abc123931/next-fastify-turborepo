@@ -1,5 +1,8 @@
+import type { Response } from "@next-fastify-turborepo/schemas";
+import { responseSchema } from "@next-fastify-turborepo/schemas";
 import type { FastifyPluginAsync } from "fastify";
 import Fastify from "fastify";
+import fastifyCors from "fastify-cors";
 
 const fastify = Fastify({
   connectionTimeout: 3000,
@@ -7,12 +10,19 @@ const fastify = Fastify({
 });
 
 const pingController: FastifyPluginAsync = async (fastify) => {
-  fastify.get("/", async (_, reply) => {
-    reply.status(200).send({ message: "pong" });
-  });
+  fastify.get<{
+    Reply: Response;
+  }>(
+    "/",
+    { schema: { response: { 200: responseSchema } } },
+    async (_, reply) => {
+      reply.status(200).send({ message: "pong" });
+    }
+  );
 };
 
 const setUp = async () => {
+  fastify.register(fastifyCors, { origin: "*" });
   fastify.register(pingController, { prefix: "/ping" });
 };
 

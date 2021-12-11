@@ -16,7 +16,10 @@
     "tsconfig": "*"
   },
   "dependencies": {
-    "fastify": "^3.24.1"
+    "@sinclair/typebox": "^0.23.1",
+    "fastify": "^3.24.1",
+    "fastify-cors": "^6.0.2",
+    "@next-fastify-turborepo/schemas": "*"
   },
   "nodemonConfig": {
     "watch": [
